@@ -20,28 +20,28 @@ public class ProdutosController {
 	@Autowired
 	Estoque produtos;
 	
-	@RequestMapping
-	public ModelAndView listar(){
-		ModelAndView mv = new ModelAndView("lista-produtos");
-		mv.addObject("produtos", produtos.getProdutos());
-		mv.addObject(new Produto());
-		
-		return mv;
-	}
-	
-	@RequestMapping(method = RequestMethod.POST)
-	public String adicionar(Produto produto){
-		this.produtos.addProduto(produto);
-		
-		return "redirect:/produtoss";
-	}
-	
-	@RequestMapping("/delete")
-	public String deletar(String nome){
-		this.produtos.deleteProduto(nome);
-		
-		return "redirect:/produtoss";
-	}
+//	@RequestMapping
+//	public ModelAndView listar(){
+//		ModelAndView mv = new ModelAndView("lista-produtos");
+//		mv.addObject("produtos", produtos.getProdutos());
+//		mv.addObject(new Produto());
+//		
+//		return mv;
+//	}
+//	
+//	@RequestMapping(method = RequestMethod.POST)
+//	public String adicionar(Produto produto){
+//		this.produtos.addProduto(produto);
+//		
+//		return "redirect:/produtoss";
+//	}
+//	
+//	@RequestMapping("/delete")
+//	public String deletar(String nome){
+//		this.produtos.deleteProduto(nome);
+//		
+//		return "redirect:/produtoss";
+//	}
 
 	@RequestMapping("/produto")
 	public String produto(BigInteger id, Model model){

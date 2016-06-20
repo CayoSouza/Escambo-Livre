@@ -11,6 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <script type="application/x-javascript"> addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
@@ -202,7 +203,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <ul class="menu list-unstyled">
                         <li class="activate"><a href="index.html">Início</a></li>
                         <li><a href="about.html">Sobre</a></li>
-                        <li><a href="cadastrar.html">Cadastrar</a></li>
+                        <li th:if="not *{email}"><a href="cadastrar.html">Cadastrar</a></li>
                         <li th:if="not *{email}"><a href="entrar.html">Entrar</a></li>
                         <li><a href="produtos.html">Produtos</a>
                         <!--<li><a href="blog.html">BLOG</a></li>-->

@@ -166,7 +166,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<ul class="menu list-unstyled">
 							<li><a href="index.html">Início</a></li>
 							<li><a href="about.html">Sobre</a></li>
-							<li class="activate"><a href="cadastrar.html">Cadastrar</a></li>
+							<li th:if="not *{email}" class="activate"><a href="cadastrar.html">Cadastrar</a></li>
 							<li th:if="not *{email}"><a href="entrar.html">Entrar</a></li>
 							<li><a href="produtos.html">Produtos</a>
 							<!--<li><a href="blog.html">BLOG</a></li>-->

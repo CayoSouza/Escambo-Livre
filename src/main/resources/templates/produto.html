@@ -7,14 +7,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Escambo Livre | Produto</span></title>
+<title>Escambo Livre | Produto</title>
 <!-- Bootstrap -->
-<link th:href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1"
 	charset="UTF-8">
 <script type="application/x-javascript">
+	
 	
 	
 	 addEventListener("load", function () {
@@ -23,6 +27,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     function hideURLbar() {
         window.scrollTo(0, 1);
     } 
+
 
 
 </script>
@@ -168,14 +173,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<ul class="menu list-unstyled">
 							<li><a href="index.html">Início</a></li>
 							<li><a href="about.html">Sobre</a></li>
-							<li><a href="cadastrar.html">Cadastrar</a></li>
-							<li class="activate" th:if="not *{email}"><a href="entrar.html">Entrar</a></li>
-							 <li><a href="produtos.html">Produtos</a>
-							<!--<li><a href="blog.html">BLOG</a></li>-->
+							<li th:if="not *{email}"><a href="cadastrar.html">Cadastrar</a></li>
+							<li class="activate" th:if="not *{email}"><a
+								href="entrar.html">Entrar</a></li>
+							<li><a href="produtos.html">Produtos</a> <!--<li><a href="blog.html">BLOG</a></li>-->
 							<li><a href="feature.html">Anunciar</a></li>
 							<li><a href="contact.html">Contato</a></li>
-							<li th:if="*{email}" th:text="*{email}" style="font-size:20px;">Bem vindo, </li>
-							<li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+							<li th:if="*{email}" th:text="*{email}" style="font-size: 20px;">Bem
+								vindo,</li>
+							<li th:if="*{email}"><a href="carrinho.html"><span
+									class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
 							<li th:if="*{email}"><a href="/logout">Logout</a></li>
 						</ul>
 					</nav>
@@ -189,10 +196,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- start main -->
 		<div class="container">
 			<div class="main_grid1">
-				<h3 class="style pull-left">Entrar</h3>
+				<h3 class="style pull-left" th:object="${produto}" th:text="*{nome}"></h3>
 				<ol class="breadcrumb pull-right">
-					<li><a href="index.html">início</a></li>
-					<li class="active">entrar</li>
+					<li><a href="index.html">Produtos</a></li>
+					<li class="active" th:object="${produto}" th:text="*{nome}"></li>
 				</ol>
 				<div class="clearfix"></div>
 			</div>
@@ -201,136 +208,156 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="main_btm1">
 		<!-- start main_btm1 -->
 		<div class="container">
-			<!-- 			<form method="post" action="cadastrar"> -->
-			<!-- 				<input type="text" value="Name (Required)" -->
-			<!-- 					onfocus="this.value = '';" -->
-			<!-- 					onblur="if (this.value == '') {this.value = 'Name';}"> <input -->
-			<!-- 					type="text" value="Email (Required)" onfocus="this.value = '';" -->
-			<!-- 					onblur="if (this.value == '') {this.value = 'Email';}"> <input -->
-			<!-- 					type="text" value="Subject" onfocus="this.value = '';" -->
-			<!-- 					onblur="if (this.value == '') {this.value = 'Subject';}"> -->
-			<!-- 				<span><input type="submit" value="cadastrar"></span> -->
-			<!-- 			</form> -->
 
 			<form class="form-inline" th:action="@{/comprar}"
 				th:object="${produto}" method="POST" style="margin: 20px 0">
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Preco"
-						th:field="*{preco}" required="true" />
-					<input type="text"
-						class="form-control" placeholder="Descricao" th:field="*{descricao}"
-						required="true" />
-					<button type="submit" class="btn btn-primary">Comprar</button>
+					<ul style="list-style-type:none;">
+						<li><img src="images/nike-shox.jpg"></li>
+						<li><label for="input-nome">Nome</label></li>
+						<li><input type="text" class="form-control" th:field="*{nome}" required="true" /></li>
+						<li><label for="input-preco">Preço</label></li>
+						<li><input type="text" class="form-control" th:field="*{preco}" required="true" /></li>
+						<li><label for="input-descricao">Descrição</label></li>
+						<li><input type="text" class="form-control" th:field="*{descricao}" required="true" /></li>
+						<li><button type="submit" class="btn btn-primary">Comprar</button></li>
+					</ul>
 				</div>
 			</form>
 
 
-			 <div class="cau_hide">
-            <div class="cursual"><!--  start cursual  -->
-                <h4>Nossos parceiros<span class="line"></span></h4>
-            </div>
-            <div id="owl-demo" class="owl-carousel"><!----start-img-cursual---->
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c1.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c2.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c3.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c1.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c2.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c3.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c1.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c4.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c1.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c2.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c3.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c1.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cau_left">
-                        <img class="lazyOwl" data-src="images/c2.png" alt="Lazy Owl Image">
-                    </div>
-                </div>
-            </div><!----//End-img-cursual---->
-        </div>
-    </div>
-</div>
-<div class="footer_bg"><!-- start footer -->
-    <div class="container">
-        <div class="footer">
-            <div class="col-md-4 footer1_of_3">
-                <div class="f_logo">
-                    <a href="index.html"><img src="images/logo.png" alt=""/></a>
-                </div>
-                <p class="f_para">O melhor e-commerce de trocas brasileiro desde 2001.</p>
-                <p>Telefone:&nbsp;<span>(21) 2345-3344</span></p>
-                <span class="">Email:&nbsp;<a href="mailto:info@mycompany.com">contato@escambolivre.com.br</a></span>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="footer1_bg"><!-- start footer1 -->
-    <div class="container">
-        <div class="footer1">
-            <div class="copy pull-left">
-                <p class="link"><span>&#169; All rights reserved | Template by&nbsp;<a href="http://w3layouts.com/"> W3Layouts</a></span>
-                </p>
-            </div>
-            <div class="soc_icons pull-right">
-                <ul class="list-unstyled text-center">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                </ul>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div>
+			<div class="cau_hide">
+				<div class="cursual">
+					<!--  start cursual  -->
+					<h4>
+						Nossos parceiros<span class="line"></span>
+					</h4>
+				</div>
+				<div id="owl-demo" class="owl-carousel">
+					<!----start-img-cursual---->
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c1.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c2.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c3.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c1.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c2.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c3.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c1.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c4.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c1.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c2.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c3.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c1.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+					<div class="item">
+						<div class="cau_left">
+							<img class="lazyOwl" data-src="images/c2.png"
+								alt="Lazy Owl Image">
+						</div>
+					</div>
+				</div>
+				<!----//End-img-cursual---->
+			</div>
+		</div>
+	</div>
+	<div class="footer_bg">
+		<!-- start footer -->
+		<div class="container">
+			<div class="footer">
+				<div class="col-md-4 footer1_of_3">
+					<div class="f_logo">
+						<a href="index.html"><img src="images/logo.png" alt="" /></a>
+					</div>
+					<p class="f_para">O melhor e-commerce de trocas brasileiro
+						desde 2001.</p>
+					<p>
+						Telefone:&nbsp;<span>(21) 2345-3344</span>
+					</p>
+					<span class="">Email:&nbsp;<a
+						href="mailto:info@mycompany.com">contato@escambolivre.com.br</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer1_bg">
+		<!-- start footer1 -->
+		<div class="container">
+			<div class="footer1">
+				<div class="copy pull-left">
+					<p class="link">
+						<span>&#169; All rights reserved | Template by&nbsp;<a
+							href="http://w3layouts.com/"> W3Layouts</a></span>
+					</p>
+				</div>
+				<div class="soc_icons pull-right">
+					<ul class="list-unstyled text-center">
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
