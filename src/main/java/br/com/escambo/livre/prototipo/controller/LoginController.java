@@ -25,6 +25,7 @@ public class LoginController {
 	public String logIn(@RequestParam(required=true) String email, @RequestParam(required=true) String senha, Model model, RedirectAttributes redir){
 		if(login.validaUsuario(email, senha)){
 			model.addAttribute("email", email);
+			model.addAttribute("usuario", login.getUsuario(email));
 			return "index";
 		}
 		redir.addFlashAttribute("message", "Login ou senha inválida!");
@@ -33,9 +34,8 @@ public class LoginController {
 	
 	@RequestMapping(value={"/login", "/"})
 	public String showPage(Model model){
-		model.addAttribute("active", "active");
 		if (model.containsAttribute("email"))
-			return "painel-controle";
+			return "index";
 		model.addAttribute("usuario", new Usuario());
 		return "index";
 	}

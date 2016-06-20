@@ -209,7 +209,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <!--<li><a href="blog.html">BLOG</a></li>-->
                         <li><a href="feature.html">Anunciar</a></li>
                         <li><a href="contact.html">Contato</a></li>
-                        <li th:if="*{email}" th:text="*{email}" style="font-size:20px;">Bem vindo, </li>
+                        <li th:if="*{email}" th:object="${usuario}" th:text="*{'Bem vindo, '+ nome}" style="font-size:20px;">Bem vindo, </li>
                         <li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
 							<li th:if="*{email}"><a href="/logout">Logout</a></li>
                     </ul>
@@ -233,7 +233,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <h4 class="title">Comece a negociar hoje!</h4>
                     <!-- /Text title -->
                     <!-- Text description -->
-                    <p class="description">Um site amigável com intuito de propocionar um ambiente propício a
+                    <p class="description">Um site amigável com intuito de viabilizar um ambiente propício à
                         negociações entre brasileiros!</p>
                     <!-- /Text description -->
                 </div></a>
@@ -333,10 +333,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="myloader"></div>
                 <!-- CONTENT -->
                 <ul class="allinone_carousel_list">
-                    <li><a href="#"><img src="images/nike-shox.jpg" alt="" class="img-responsive"/></a></li>
-                    <li><a href="#"><img src="images/awp-asiimov.jpg" alt="" class="img-responsive"/></a></li>
-                    <li><a href="#"><img src="images/conta-lol.jpg" alt="" class="img-responsive"/></a></li>
-                    <li><a href="#"><img src="images/n3ds-abolisher.jpg" alt="" class="img-responsive"/></a></li>
+                    <li><a href="/produto?id=1"><img src="images/1.jpg" alt="" class="img-responsive"/></a></li>
+                    <li><a href="/produto?id=2"><img src="images/2.jpg" alt="" class="img-responsive"/></a></li>
+                    <li><a href="/produto?id=4"><img src="images/4.jpg" alt="" class="img-responsive"/></a></li>
+                    <li><a href="/produto?id=3"><img src="images/3.jpg" alt="" class="img-responsive"/></a></li>
                 </ul>
             </div>
         </div>

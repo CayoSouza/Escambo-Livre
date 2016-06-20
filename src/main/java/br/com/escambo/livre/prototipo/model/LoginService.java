@@ -1,6 +1,7 @@
 package br.com.escambo.livre.prototipo.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -36,5 +37,14 @@ public class LoginService {
 
 	public void addUsuario(Usuario usuario) {
 		usuarios.add(usuario);
+	}
+	
+	public Usuario getUsuario(String email){
+		for(Iterator<Usuario> iter = usuarios.listIterator(); iter.hasNext();){
+			Usuario especifico = iter.next();
+			if (especifico.getEmail().equalsIgnoreCase(email))
+				return especifico;
+		}
+		return null;
 	}
 }
