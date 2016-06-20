@@ -1,6 +1,7 @@
 package br.com.escambo.livre.prototipo.model;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -13,13 +14,13 @@ public class Estoque {
 	private static List<Produto> produtos = new ArrayList<>();
 	
 	static {
-		produtos.add(new Produto("Nike Shox", new BigDecimal("500.00"), "Modelo v3"));
-		produtos.add(new Produto("Conta de LoL", new BigDecimal("300.00"), "Platina 1"));
-		produtos.add(new Produto("AWP Asiimov", new BigDecimal("130.00"), "Veterana de Guerra"));
+		produtos.add(new Produto(new BigInteger("1"), "Nike Shox", new BigDecimal("500.00"), "Modelo v3"));
+		produtos.add(new Produto(new BigInteger("2"), "Conta de LoL", new BigDecimal("300.00"), "Platina 1"));
+		produtos.add(new Produto(new BigInteger("3"), "AWP Asiimov", new BigDecimal("130.00"), "Veterana de Guerra"));
 	}
 	
-	public void addProduto(String nome, BigDecimal preco, String descricao){
-		produtos.add(new Produto(nome, preco, descricao));
+	public void addProduto(BigInteger id, String nome, BigDecimal preco, String descricao){
+		produtos.add(new Produto(id, nome, preco, descricao));
 	}
 	
 	public List<Produto> getProdutos(){

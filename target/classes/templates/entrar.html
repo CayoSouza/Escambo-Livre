@@ -7,8 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Modus-Versus a bootstrap Website Template | Services ::
-	w3layouts</title>
+<title>Escambo Livre | Entrar</title>
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
@@ -169,20 +168,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li><a href="index.html">Início</a></li>
 							<li><a href="about.html">Sobre</a></li>
 							<li><a href="cadastrar.html">Cadastrar</a></li>
-							<li class="active" th:if="not *{email}"><a href="entrar.html">Entrar</a></li>
-							 <li class="activate"><a href="produtos.html">Buscar</a>
-                            <ul class="sub-menu list-unstyled">
-                                <li><a href="produtos.html">Novos</a></li>
-                                <li><a href="produtos.html">Usados</a></li>
-                                <li><a href="produtos.html">Trocas</a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="produtos.html">Troca livre</a></li>
-                                        <li><a href="produtos.html">Só dinheiro</a></li>
-                                        <li><a href="produtos.html">Só troca</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+							<li class="activate" th:if="not *{email}"><a href="entrar.html">Entrar</a></li>
+							 <li><a href="produtos.html">Produtos</a>
 							<!--<li><a href="blog.html">BLOG</a></li>-->
 							<li><a href="feature.html">Anunciar</a></li>
 							<li><a href="contact.html">Contato</a></li>

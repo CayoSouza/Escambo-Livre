@@ -1,8 +1,10 @@
 package br.com.escambo.livre.prototipo.model;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 public class Produto {
+	private BigInteger id;
 	private String nome;
 	private BigDecimal preco;
 	private String descricao;
@@ -10,12 +12,21 @@ public class Produto {
 	public Produto() {
 	}
 	
-	public Produto(String nome, BigDecimal preco, String descricao) {
+	public Produto(BigInteger id, String nome, BigDecimal preco, String descricao) {
+		this.id = id;
 		this.nome = nome;
 		this.preco = preco;
 		this.descricao = descricao;
 	}
+	
+	public BigInteger getId() {
+		return id;
+	}
 
+	public void setId(BigInteger id) {
+		this.id = id;
+	}
+	
 	public String getNome() {
 		return nome;
 	}

@@ -204,23 +204,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li><a href="about.html">Sobre</a></li>
                         <li><a href="cadastrar.html">Cadastrar</a></li>
                         <li th:if="not *{email}"><a href="entrar.html">Entrar</a></li>
-                        <li><a href="produtos.html">Buscar</a>
-                            <ul class="sub-menu list-unstyled">
-                                <li><a href="produtos.html">Novos</a></li>
-                                <li><a href="produtos.html">Usados</a></li>
-                                <li><a href="produtos.html">Trocas</a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="produtos.html">Troca livre</a></li>
-                                        <li><a href="produtos.html">Só dinheiro</a></li>
-                                        <li><a href="produtos.html">Só troca</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                        <li><a href="produtos.html">Produtos</a>
                         <!--<li><a href="blog.html">BLOG</a></li>-->
                         <li><a href="feature.html">Anunciar</a></li>
                         <li><a href="contact.html">Contato</a></li>
                         <li th:if="*{email}" th:text="*{email}" style="font-size:20px;">Bem vindo, </li>
+                        <li th:if="*{email}"><a href="carrinho.html"></a><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
 							<li th:if="*{email}"><a href="/logout">Logout</a></li>
                     </ul>
                 </nav>
@@ -289,7 +278,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <p>Tenha mais controle de suas negociações, crie sua reputação e desfrute de todas as
                             funcionalidades do site!</p>
                         <div class="read_more">
-                            <a class="btn btn-2 active" href="single-page.html">Cadastrar</a>
+                            <a class="btn btn-2 active" href="cadastrar.html">Cadastrar</a>
                         </div>
                     </div>
                 </div>
@@ -299,7 +288,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <h3>Anuncie</h3>
                         <p>Aqui todos tem a liberdade de anunciar qualquer produto, seja para venda ou troca!</p>
                         <div class="read_more">
-                            <a class="btn  btn-2b" href="single-page.html">Anunciar</a>
+                            <a class="btn  btn-2b" href="feature.html">Anunciar</a>
                         </div>
                     </div>
                 </div>
@@ -310,7 +299,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <p>Procurando algum produto? Não perca tempo e navegue por mais de 30.000 produtos
                             anunciados!</p>
                         <div class="read_more">
-                            <a class="btn btn-2b" href="single-page.html">Buscar</a>
+                            <a class="btn btn-2b" href="produtos.html">Buscar</a>
                         </div>
                     </div>
                 </div>
