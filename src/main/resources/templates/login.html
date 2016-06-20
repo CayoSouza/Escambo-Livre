@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<title>Entrar | EscamboLivre</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous" />
+
+</head>
+<body>
+	<!-- 	<nav class="navbar navbar-default navbar-static-top"> -->
+	<!-- 		<div class="container"> -->
+	<!-- 			<ul class="nav navbar-nav"> -->
+	<!-- 				<li><a href="painel-controle">Painel de Controle</a></li> -->
+	<!-- 				<li class="active"><a href="/login">Login</a></li> -->
+	<!-- 				<li><a href="/produtos">Produtos</a></li> -->
+	<!-- 				<li th:if="*{email}"><a href="/logout">Logout</a></li> -->
+	<!-- 			</ul> -->
+	<!-- 		</div> -->
+	<!-- 	</nav> -->
+
+	<nav th:replace="/layout :: menu"></nav>
+
+	<div th:if="${message}" class="alert alert-danger" role="alert">
+		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		<span class="sr-only">Error:</span>
+		<p th:text="${message}"></p>
+	</div>
+	
+	<header class="page-header">
+		<h1>
+			Entrar <small>login</small>
+		</h1>
+	</header>
+
+	<form class="form-inline" th:action="@{/login}" th:object="${usuario}"
+		method="POST" style="margin: 20px 0">
+		<div class="form-group">
+			<input type="email" class="form-control" placeholder="Email"
+				th:field="*{email}" required="true" /> <input type="password"
+				class="form-control" placeholder="Senha" th:field="*{senha}"
+				required="true" />
+			<button type="submit" class="btn btn-primary">Entrar</button>
+		</div>
+	</form>
+<!-- 	<p th:text="${message}"></p> -->
+	<h2 class="page-header">
+		Não tem conta? <small>cadastre-se aqui</small>
+	</h2>
+
+	<form class="form-inline" th:action="@{/cadastrar}"
+		th:object="${usuario}" method="POST" style="margin: 20px 0">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Nome"
+				th:field="*{nome}" required="true" /> <input type="email"
+				class="form-control" placeholder="Email" th:field="*{email}"
+				required="true" /> <input type="password" class="form-control"
+				placeholder="Senha" th:field="*{senha}" required="true" />
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
+		</div>
+	</form>
+</body>
+</html>

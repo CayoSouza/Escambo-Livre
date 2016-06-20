@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<title>Home | EscamboLivre</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous" />
+
+</head>
+<body>
+	<!-- 	<nav class="navbar navbar-default navbar-static-top"> -->
+	<!-- 		<div class="container"> -->
+	<!-- 			<ul class="nav navbar-nav"> -->
+	<!-- 				<li class="active"><a href="painel-controle">Painel de Controle</a></li> -->
+	<!-- 				<li><a href="/login">Login</a></li> -->
+	<!-- 				<li><a href="/produtos">Produtos</a></li> -->
+	<!-- 				<li th:if="*{email}"><a href="/logout">Logout</a></li> -->
+	<!-- 			</ul> -->
+	<!-- 		</div> -->
+	<!-- 	</nav> -->
+
+	<nav th:replace="/layout :: menu"></nav>
+	<header class="page-header">
+		<h1>
+			Bem vindo(a), <small><span th:text="${email}"></span></small>
+		</h1>
+	</header>
+
+	<form th:action="@{/logout}">
+		<button type="submit" class="btn btn-primary">Logout</button>
+	</form>
+</body>
+</html>
