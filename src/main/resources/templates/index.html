@@ -209,7 +209,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li><a href="feature.html">Anunciar</a></li>
                         <li><a href="contact.html">Contato</a></li>
                         <li th:if="*{email}" th:text="*{email}" style="font-size:20px;">Bem vindo, </li>
-                        <li th:if="*{email}"><a href="carrinho.html"></a><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+                        <li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
 							<li th:if="*{email}"><a href="/logout">Logout</a></li>
                     </ul>
                 </nav>

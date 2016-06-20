@@ -38,4 +38,13 @@ public class Estoque {
 				iter.remove();
 		}
 	}
+	
+	public Produto getProduto(BigInteger id){
+		for (Iterator<Produto> iter = produtos.listIterator(); iter.hasNext();){
+			Produto especifico = iter.next();
+			if (especifico.getId().equals(id))
+				return especifico;
+		}
+		return null;
+	}
 }

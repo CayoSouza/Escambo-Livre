@@ -11,6 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1"
 	charset="UTF-8">
 <script type="application/x-javascript">
@@ -170,6 +171,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li><a href="feature.html">Anunciar</a></li>
 							<li><a href="contact.html">Contato</a></li>
 							<li th:if="*{email}" th:text="*{email}" style="font-size:20px;">Bem vindo, </li>
+							<li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
 							<li th:if="*{email}"><a href="/logout">Logout</a></li>
 						</ul>
 					</nav>

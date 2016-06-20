@@ -7,9 +7,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Escambo Livre | Entrar</title>
+<title>Escambo Livre | Produto</span></title>
 <!-- Bootstrap -->
-<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link th:href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1"
@@ -212,19 +212,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- 				<span><input type="submit" value="cadastrar"></span> -->
 			<!-- 			</form> -->
 
-			<div th:if="${message}" class="alert alert-danger" role="alert">
-				<span class="glyphicon glyphicon-exclamation-sign"
-					aria-hidden="true"></span> <span class="sr-only">Error:</span>
-				<p th:text="${message}"></p>
-			</div>
-			<form class="form-inline" th:action="@{/login}"
-				th:object="${usuario}" method="POST" style="margin: 20px 0">
+			<form class="form-inline" th:action="@{/comprar}"
+				th:object="${produto}" method="POST" style="margin: 20px 0">
 				<div class="form-group">
-					<input type="email" class="form-control" placeholder="Email"
-						th:field="*{email}" required="true" /> <input type="password"
-						class="form-control" placeholder="Senha" th:field="*{senha}"
+					<input type="text" class="form-control" placeholder="Preco"
+						th:field="*{preco}" required="true" />
+					<input type="text"
+						class="form-control" placeholder="Descricao" th:field="*{descricao}"
 						required="true" />
-					<button type="submit" class="btn btn-primary">Entrar</button>
+					<button type="submit" class="btn btn-primary">Comprar</button>
 				</div>
 			</form>
 
