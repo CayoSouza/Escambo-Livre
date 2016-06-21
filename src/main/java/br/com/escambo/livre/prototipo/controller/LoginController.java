@@ -40,10 +40,10 @@ public class LoginController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/painel-controle")
-	public String panelManager(Model model){
-		return (model.containsAttribute("email")) ? "painel-controle" : "redirect:/login";
-	}
+//	@RequestMapping(value="/painel-controle")
+//	public String panelManager(Model model){
+//		return (model.containsAttribute("email")) ? "painel-controle" : "redirect:/login";
+//	}
 	
 	@RequestMapping(value="/logout")
 	public String logout(SessionStatus status){

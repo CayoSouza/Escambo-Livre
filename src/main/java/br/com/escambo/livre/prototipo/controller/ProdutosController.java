@@ -93,8 +93,8 @@ public class ProdutosController {
 			this.carrinho.deletePorId(id);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "produtos";
+			return "carrinho";
 		}
-		return "carrinho";
+		return "redirect:/carrinho";
 	}
 }

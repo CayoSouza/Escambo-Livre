@@ -208,7 +208,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- start main_btm1 -->
 		<div class="container">
 
-			<form class="form-inline" onclick="alert('Produto adicionado ao carrinho de compras!'');" th:action="@{/comprar?id=+$idToString}"
+			<form class="form-inline" onclick="alert('Produto adicionado ao carrinho de compras!'');" th:action="'/comprar?id='+*{id}"
 				th:object="${produto}" method="POST" style="margin: 20px 0">
 				<div class="form-group">
 				<img style="max-width:600px; max-height:330px;" th:src="'images/'+*{id}+'.jpg'">
