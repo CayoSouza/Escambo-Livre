@@ -15,7 +15,7 @@ import br.com.escambo.livre.prototipo.model.LoginService;
 import br.com.escambo.livre.prototipo.model.Usuario;
 
 @Controller
-@SessionAttributes(value = {"email", "usuario"})
+@SessionAttributes(value = {"email", "usuario", "carrinho"})
 public class LoginController {
 
 	@Autowired
@@ -80,12 +80,17 @@ public class LoginController {
 	
 	@RequestMapping("/entrar")
 	public String entrar(Model model){
-		if (model.containsAttribute("email"))
-			return "index";
-		if (model.containsAttribute("usuario"))
-			return "entrar";
-		model.addAttribute("usuario", new Usuario());
+		try {
+			if (model.containsAttribute("email"))
+				return "index";
+			if (model.containsAttribute("usuario"))
+				return "entrar";
+		} catch (Exception e) {
+			model.addAttribute("usuario", new Usuario());
+		}
+		
 		return "entrar";
+		
 	}
 	
 	@RequestMapping("/produtos")

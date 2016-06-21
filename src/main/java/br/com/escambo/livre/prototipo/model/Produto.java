@@ -22,6 +22,10 @@ public class Produto {
 	public BigInteger getId() {
 		return id;
 	}
+	
+	public String idToString(){
+		return String.valueOf(id.intValue());
+	}
 
 	public void setId(BigInteger id) {
 		this.id = id;
