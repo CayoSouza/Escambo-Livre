@@ -32,7 +32,7 @@ public class LoginController {
 		return "redirect:/entrar";
 	}
 	
-	@RequestMapping(value={"/login", "/"})
+	@RequestMapping(value={"/", "/login"})
 	public String showPage(Model model){
 		if (model.containsAttribute("usuario"))
 			return "index";
