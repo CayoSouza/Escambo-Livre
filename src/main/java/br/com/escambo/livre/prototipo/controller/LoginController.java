@@ -15,7 +15,7 @@ import br.com.escambo.livre.prototipo.model.LoginService;
 import br.com.escambo.livre.prototipo.model.Usuario;
 
 @Controller
-@SessionAttributes(value = {"email"})
+@SessionAttributes(value = {"email", "usuario"})
 public class LoginController {
 
 	@Autowired
@@ -34,7 +34,7 @@ public class LoginController {
 	
 	@RequestMapping(value={"/login", "/"})
 	public String showPage(Model model){
-		if (model.containsAttribute("email"))
+		if (model.containsAttribute("usuario"))
 			return "index";
 		model.addAttribute("usuario", new Usuario());
 		return "index";

@@ -16,7 +16,8 @@ public class Estoque {
 	static {
 		produtos.add(new Produto(new BigInteger("1"), "Nike Shox", new BigDecimal("500.00"), "Modelo v3"));
 		produtos.add(new Produto(new BigInteger("2"), "Conta de LoL", new BigDecimal("300.00"), "Platina 1"));
-		produtos.add(new Produto(new BigInteger("3"), "AWP Asiimov", new BigDecimal("130.00"), "Veterana de Guerra"));
+		produtos.add(new Produto(new BigInteger("3"), "Nintendo 3DS", new BigDecimal("660.00"), "Acompanha 4 jogos originais"));
+		produtos.add(new Produto(new BigInteger("4"), "AWP Asiimov", new BigDecimal("130.00"), "Pouco usada (minimal wear)"));
 	}
 	
 	public void addProduto(BigInteger id, String nome, BigDecimal preco, String descricao){

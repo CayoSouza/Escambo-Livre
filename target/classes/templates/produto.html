@@ -211,110 +211,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<form class="form-inline" th:action="@{/comprar}"
 				th:object="${produto}" method="POST" style="margin: 20px 0">
 				<div class="form-group">
-				<img th:src="'images/'+*{id}+'.jpg'">
+				<img style="max-width:600px; max-height:330px;" th:src="'images/'+*{id}+'.jpg'">
 					<ul style="list-style-type:none;font-size:23px;margin:5px;float:right;">
-						<li><label for="input-nome">Nome</label></li>
-						<li><input disabled=true type="text" class="form-control" th:field="*{nome}" required="true" /></li>
-						<li><label for="input-preco">Preço</label></li>
-						<li><input disabled=true type="text" class="form-control" th:field="*{preco}" required="true" /></li>
-						<li><label for="input-descricao">Descrição</label></li>
-						<li><input disabled=true type="text" class="form-control" th:field="*{descricao}" required="true" /></li>
+<!-- 						<li><label for="input-nome">Nome</label></li> -->
+<!-- 						<li><input disabled=true type="text" class="form-control" th:field="*{nome}" required="true" /></li> -->
+<!-- 						<li><label for="input-preco">Preço</label></li> -->
+<!-- 						<li><input disabled=true type="text" class="form-control" th:field="*{preco}" required="true" /></li> -->
+<!-- 						<li><label for="input-descricao">Descrição</label></li> -->
+<!-- 						<li><input disabled=true type="text" class="form-control" th:field="*{descricao}" required="true" /></li> -->
+						<li>
+							<div class="panel panel-info">
+								<div class="panel-heading" th:object="${produto}" th:text="'Preço: R$ '+*{preco}"></div>
+								<div class="panel-body" th:object="${produto}" th:text="*{descricao}"></div>
+							</div>
+						</li>
 						<li style="margin-top:10px"><button type="submit" class="btn btn-primary">Adicionar ao carrinho</button></li>
+					</ul>
+				</div>
+			</form>
+			
+			<form class="form-inline" th:action="@{/randomProduct}"
+				th:object="${produto}" method="GET" style="margin: 20px 0">
+				<div class="form-group">
+					<ul style="list-style-type:none;font-size:23px;margin:5px;">
+						<li style="margin:5px 0px 40px 140px"><button type="submit" class="btn btn-primary">Ver produto aleatório</button></li>
 					</ul>
 				</div>
 			</form>
 
 
-			<div class="cau_hide">
-				<div class="cursual">
-					<!--  start cursual  -->
-					<h4>
-						Nossos parceiros<span class="line"></span>
-					</h4>
-				</div>
-				<div id="owl-demo" class="owl-carousel">
-					<!----start-img-cursual---->
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c1.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c2.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c3.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c1.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c2.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c3.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c1.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c4.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c1.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c2.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c3.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c1.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-					<div class="item">
-						<div class="cau_left">
-							<img class="lazyOwl" data-src="images/c2.png"
-								alt="Lazy Owl Image">
-						</div>
-					</div>
-				</div>
-				<!----//End-img-cursual---->
-			</div>
+		
 		</div>
 	</div>
 	<div class="footer_bg">

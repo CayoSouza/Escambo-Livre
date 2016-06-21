@@ -1,7 +1,6 @@
 package br.com.escambo.livre.prototipo.controller;
 
 import java.math.BigInteger;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +13,7 @@ import br.com.escambo.livre.prototipo.model.Estoque;
 import br.com.escambo.livre.prototipo.model.Produto;
 
 @Controller
-@SessionAttributes("email")
+@SessionAttributes(value={"email", "usuario"})
 public class ProdutosController {
 	
 	@Autowired
@@ -49,5 +48,16 @@ public class ProdutosController {
 		model.addAttribute("produto", produto);
 	
 		return "produto";
+	}
+	
+	@RequestMapping("/randomProduct")
+	public String randomProduct(Integer id){
+		int random = (int) (Math.random() * 4)+1;
+//		if (random == id)
+//			if (random==1)
+//				return "redirect:/produto?id="+(random+1);
+//			else if(random==4)
+//				return "redirect:/produto?id="+(random-1);
+		return "redirect:/produto?id="+random;
 	}
 }
