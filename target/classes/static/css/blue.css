@@ -1599,3 +1599,26 @@ h3.style{
 		text-decoration: none;
 	}
 }
+
+#h1-carrinho {
+	font-size: 20px;
+}
+
+#carrinho thead, tbody, tfoot {
+	font-size: 15px;
+}
+
+#carrinho tfoot{
+	text-align:center;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+#total-carrinho {
+	font-weight: bold;
+	color: red;
+}
+
+#deletar-item{
+	margin-left: 15px;
+}
