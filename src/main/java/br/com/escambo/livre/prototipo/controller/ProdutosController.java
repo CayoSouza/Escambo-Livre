@@ -43,6 +43,8 @@ public class ProdutosController {
 //		
 //		return "redirect:/produtoss";
 //	}
+	
+	
 
 	@RequestMapping("/produto")
 	public String produto(BigInteger id, Model model){
@@ -70,6 +72,8 @@ public class ProdutosController {
 		return "produtos";
 	}
 	
+
+	
 	@RequestMapping("/carrinho")
 	public String listarCarrinho(Model model){
 		if (!(model.containsAttribute("email")))
@@ -81,7 +85,7 @@ public class ProdutosController {
 //			return "produtos";
 		System.out.println(carrinho.getProdutos());
 		model.addAttribute("carrinho", carrinho.getProdutos());
-		model.addAttribute(new Produto());
+		//model.addAttribute(new Produto());
 		
 		return "carrinho";
 	}

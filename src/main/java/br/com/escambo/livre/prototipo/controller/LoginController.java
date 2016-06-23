@@ -95,7 +95,9 @@ public class LoginController {
 	
 	@RequestMapping("/produtos")
 	public String buscar(){
-		
+		//model.addAttribute("estoque", produtos.getProdutos());
+		//System.out.println(produtos.getProdutos());
+		//model.addAttribute(new Produto());
 		return "produtos";
 	}
 	
