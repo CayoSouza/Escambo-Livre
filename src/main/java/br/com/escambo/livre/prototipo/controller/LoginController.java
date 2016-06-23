@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import br.com.escambo.livre.prototipo.model.Carrinho;
 import br.com.escambo.livre.prototipo.model.LoginService;
 import br.com.escambo.livre.prototipo.model.Usuario;
 
@@ -46,7 +47,8 @@ public class LoginController {
 //	}
 	
 	@RequestMapping(value="/logout")
-	public String logout(SessionStatus status){
+	public String logout(SessionStatus status, Model model){
+		Carrinho.limparCarrinho();
 		status.setComplete();
 		return "redirect:/login";
 	}
@@ -59,9 +61,14 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value={"/index"})
-	public String welcomePage(Model model){
-		
-		return "index";
+	public String welcomePage(Model model, SessionStatus status){
+		try {
+			return "index";
+		} catch (Exception e) {
+			Carrinho.limparCarrinho();
+			status.setComplete();
+			return "redirect:/login";
+		}
 	}
 	
 	@RequestMapping("/about")
@@ -93,13 +100,7 @@ public class LoginController {
 		
 	}
 	
-	@RequestMapping("/produtos")
-	public String buscar(){
-		//model.addAttribute("estoque", produtos.getProdutos());
-		//System.out.println(produtos.getProdutos());
-		//model.addAttribute(new Produto());
-		return "produtos";
-	}
+
 	
 	@RequestMapping("/feature")
 	public String anunciar(){

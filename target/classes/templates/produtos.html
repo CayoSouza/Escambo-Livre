@@ -150,167 +150,167 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li><span class="filter" data-filter="escambolivre">Escambo Livre</span></li>
 				</ul>
 				<div id="portfoliolist" >
-<!-- 					<div class="portfolio usado escambolivre" data-cat="usado escambolivre"> -->
-<!-- 						<div class="portfolio-wrapper">  -->
-<!-- 						<a rel="group" title=""  th:href="'/produto?id='+${produto.id}"> -->
-<!-- 							<img th:src="'images/'+${produto.id}+'.jpg'" alt=""  class="img-responsive caixa-img-produto" /> -->
-<!-- 						</a> -->
+					<div class="portfolio usado escambolivre" data-cat="usado escambolivre" th:each="produto : ${estoque}">
+						<div class="portfolio-wrapper"> 
+						<a rel="group" title=""  th:href="'/produto?id='+${produto.id}">
+							<img th:src="'images/'+${produto.id}+'.jpg'" alt=""  class="img-responsive caixa-img-produto" />
+						</a>
+							<div class="label">
+								<div class="label-text">
+									<span class="text-category" th:text="${produto.nome}"></span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>
+<!-- 					<div class="portfolio novo escambolivre" data-cat="novo escambolivre"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+							
+<!-- 								<a href="/produto?id=1"><img src="images/1.jpg" alt="Nike Shox Novo" -->
+<!-- 									class="img-responsive caixa-img-produto" /></a> -->
+							
 <!-- 							<div class="label"> -->
 <!-- 								<div class="label-text"> -->
-<!-- 									<span class="text-category" th:text="${produto.nome}"></span> -->
+<!-- 									<span class="text-category">Nike Shox</span> -->
 <!-- 								</div> -->
 <!-- 								<div class="label-bg"></div> -->
 <!-- 							</div> -->
 <!-- 						</div> -->
 <!-- 					</div> -->
-					<div class="portfolio novo escambolivre" data-cat="novo escambolivre">
-						<div class="portfolio-wrapper">
-							
-								<a href="/produto?id=1"><img src="images/1.jpg" alt="Nike Shox Novo"
-									class="img-responsive caixa-img-produto" /></a>
-							
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">Nike Shox</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio usado escambolivre" data-cat="usado escambolivre">
-						<div class="portfolio-wrapper">
-								<a rel="group" title=""href="/produto?id=4"><img
-									src="images/4.jpg"  alt="AWP Asiimov"
-									class="img-responsive caixa-img-produto" /></a>
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">AWP Asiimov</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio usado escambolivre" data-cat="usado escambolivre">
-						<div class="portfolio-wrapper">
-								<a rel="group" title="" href="/produto?id=2"><img
-									src="images/2.jpg" alt="Conta LoL"
-									class="img-responsive caixa-img-produto" /></a>
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">Conta League of Legends</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio usado escambolivre" data-cat="usado escambolivre">
-						<div class="portfolio-wrapper">
-								<a rel="group" title=""  href="/produto?id=3"><img
-									src="images/3.jpg" alt=""  class="img-responsive caixa-img-produto" /></a>
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">Nintendo 3DS</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio escambolivre" data-cat="escambolivre">
-						<div class="portfolio-wrapper">
-								<a rel="group" title="" href="images/s5.jpg"><img
-									src="images/s5.jpg" alt="" class="img-responsive" /></a>
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">APP</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio trocadinheiro" data-cat="trocadinheiro">
-						<div class="portfolio-wrapper">
-								<a rel="group" title="" href="images/s6.jpg"><img
-									src="images/s6.jpg" alt="" class="img-responsive" /></a>
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">Business card</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio escambolivre" data-cat="escambolivre">
-						<div class="portfolio-wrapper">
-								<a rel="group" title="" href="images/s7.jpg"><img
-									src="images/s7.jpg" alt="" class="img-responsive" /></a>
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">Business card</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio troca" data-cat="troca">
-						<div class="portfolio-wrapper">
-								<a rel="group" title="" href="images/s8.jpg"><img
-									src="images/s8.jpg" alt="" class="img-responsive" /></a>
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">Logo</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio novo" data-cat="novo">
-						<div class="portfolio-wrapper">
-								<a rel="group" title="" href="images/s2.jpg"><img
-									src="images/s2.jpg" alt="" class="img-responsive" /></a>
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">APP</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio trocadinheiro" data-cat="trocadinheiro">
-						<div class="portfolio-wrapper">
-								<a rel="group" title="" href="images/s5.jpg"><img
-									src="images/s5.jpg" alt="" class="img-responsive" /></a>
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">Business card</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio usado" data-cat="usado">
-						<div class="portfolio-wrapper">
-								<a rel="group" title="" href="images/s1.jpg"><img
-									src="images/s1.jpg" alt="" class="img-responsive" /></a>
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">Logo</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio novo" data-cat="novo">
-						<div class="portfolio-wrapper">
-								<a rel="group" title="" href="images/s5.jpg"><img
-									src="images/s5.jpg" alt="" class="img-responsive" /></a>
-							<div class="label">
-								<div class="label-text">
-									<span class="text-category">App</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
+<!-- 					<div class="portfolio usado escambolivre" data-cat="usado escambolivre"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+<!-- 								<a rel="group" title=""href="/produto?id=4"><img -->
+<!-- 									src="images/4.jpg"  alt="AWP Asiimov" -->
+<!-- 									class="img-responsive caixa-img-produto" /></a> -->
+<!-- 							<div class="label"> -->
+<!-- 								<div class="label-text"> -->
+<!-- 									<span class="text-category">AWP Asiimov</span> -->
+<!-- 								</div> -->
+<!-- 								<div class="label-bg"></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="portfolio usado escambolivre" data-cat="usado escambolivre"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+<!-- 								<a rel="group" title="" href="/produto?id=2"><img -->
+<!-- 									src="images/2.jpg" alt="Conta LoL" -->
+<!-- 									class="img-responsive caixa-img-produto" /></a> -->
+<!-- 							<div class="label"> -->
+<!-- 								<div class="label-text"> -->
+<!-- 									<span class="text-category">Conta League of Legends</span> -->
+<!-- 								</div> -->
+<!-- 								<div class="label-bg"></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="portfolio usado escambolivre" data-cat="usado escambolivre"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+<!-- 								<a rel="group" title=""  href="/produto?id=3"><img -->
+<!-- 									src="images/3.jpg" alt=""  class="img-responsive caixa-img-produto" /></a> -->
+<!-- 							<div class="label"> -->
+<!-- 								<div class="label-text"> -->
+<!-- 									<span class="text-category">Nintendo 3DS</span> -->
+<!-- 								</div> -->
+<!-- 								<div class="label-bg"></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="portfolio escambolivre" data-cat="escambolivre"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+<!-- 								<a rel="group" title="" href="images/s5.jpg"><img -->
+<!-- 									src="images/s5.jpg" alt="" class="img-responsive" /></a> -->
+<!-- 							<div class="label"> -->
+<!-- 								<div class="label-text"> -->
+<!-- 									<span class="text-category">APP</span> -->
+<!-- 								</div> -->
+<!-- 								<div class="label-bg"></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="portfolio trocadinheiro" data-cat="trocadinheiro"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+<!-- 								<a rel="group" title="" href="images/s6.jpg"><img -->
+<!-- 									src="images/s6.jpg" alt="" class="img-responsive" /></a> -->
+<!-- 							<div class="label"> -->
+<!-- 								<div class="label-text"> -->
+<!-- 									<span class="text-category">Business card</span> -->
+<!-- 								</div> -->
+<!-- 								<div class="label-bg"></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="portfolio escambolivre" data-cat="escambolivre"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+<!-- 								<a rel="group" title="" href="images/s7.jpg"><img -->
+<!-- 									src="images/s7.jpg" alt="" class="img-responsive" /></a> -->
+<!-- 							<div class="label"> -->
+<!-- 								<div class="label-text"> -->
+<!-- 									<span class="text-category">Business card</span> -->
+<!-- 								</div> -->
+<!-- 								<div class="label-bg"></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="portfolio troca" data-cat="troca"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+<!-- 								<a rel="group" title="" href="images/s8.jpg"><img -->
+<!-- 									src="images/s8.jpg" alt="" class="img-responsive" /></a> -->
+<!-- 							<div class="label"> -->
+<!-- 								<div class="label-text"> -->
+<!-- 									<span class="text-category">Logo</span> -->
+<!-- 								</div> -->
+<!-- 								<div class="label-bg"></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="portfolio novo" data-cat="novo"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+<!-- 								<a rel="group" title="" href="images/s2.jpg"><img -->
+<!-- 									src="images/s2.jpg" alt="" class="img-responsive" /></a> -->
+<!-- 							<div class="label"> -->
+<!-- 								<div class="label-text"> -->
+<!-- 									<span class="text-category">APP</span> -->
+<!-- 								</div> -->
+<!-- 								<div class="label-bg"></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="portfolio trocadinheiro" data-cat="trocadinheiro"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+<!-- 								<a rel="group" title="" href="images/s5.jpg"><img -->
+<!-- 									src="images/s5.jpg" alt="" class="img-responsive" /></a> -->
+<!-- 							<div class="label"> -->
+<!-- 								<div class="label-text"> -->
+<!-- 									<span class="text-category">Business card</span> -->
+<!-- 								</div> -->
+<!-- 								<div class="label-bg"></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="portfolio usado" data-cat="usado"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+<!-- 								<a rel="group" title="" href="images/s1.jpg"><img -->
+<!-- 									src="images/s1.jpg" alt="" class="img-responsive" /></a> -->
+<!-- 							<div class="label"> -->
+<!-- 								<div class="label-text"> -->
+<!-- 									<span class="text-category">Logo</span> -->
+<!-- 								</div> -->
+<!-- 								<div class="label-bg"></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="portfolio novo" data-cat="novo"> -->
+<!-- 						<div class="portfolio-wrapper"> -->
+<!-- 								<a rel="group" title="" href="images/s5.jpg"><img -->
+<!-- 									src="images/s5.jpg" alt="" class="img-responsive" /></a> -->
+<!-- 							<div class="label"> -->
+<!-- 								<div class="label-text"> -->
+<!-- 									<span class="text-category">App</span> -->
+<!-- 								</div> -->
+<!-- 								<div class="label-bg"></div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
 				</div>
 				<!--             <div class="clearfix"></div> -->
 				<!--             <ul class="pagination"> -->

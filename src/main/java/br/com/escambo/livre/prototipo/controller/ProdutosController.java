@@ -72,7 +72,13 @@ public class ProdutosController {
 		return "produtos";
 	}
 	
-
+	@RequestMapping("/produtos")
+	public String buscar(Model model){
+		model.addAttribute("estoque", produtos.getProdutos());
+		//System.out.println(produtos.getProdutos());
+		//model.addAttribute(new Produto());
+		return "produtos";
+	}
 	
 	@RequestMapping("/carrinho")
 	public String listarCarrinho(Model model){
