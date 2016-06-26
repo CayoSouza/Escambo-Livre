@@ -8,6 +8,9 @@ public class Produto {
 	private String nome;
 	private BigDecimal preco;
 	private String descricao;
+	private String tipo;
+	private boolean escambo;
+	private String imagem;
 	
 	public Produto() {
 	}
@@ -17,6 +20,25 @@ public class Produto {
 		this.nome = nome;
 		this.preco = preco;
 		this.descricao = descricao;
+	}
+	
+	public Produto(BigInteger id, String nome, BigDecimal preco, String descricao, String tipo, boolean escambo) {
+		this.id = id;
+		this.nome = nome;
+		this.preco = preco;
+		this.descricao = descricao;
+		this.setTipo(tipo);
+		this.setEscambo(escambo);
+	}
+	
+	public Produto(BigInteger id, String nome, BigDecimal preco, String descricao, String tipo, boolean escambo, String imagem) {
+		this.id = id;
+		this.nome = nome;
+		this.preco = preco;
+		this.descricao = descricao;
+		this.tipo = tipo;
+		this.escambo = escambo;
+		this.imagem = imagem;
 	}
 	
 	public BigInteger getId() {
@@ -53,6 +75,30 @@ public class Produto {
 	
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public boolean isEscambo() {
+		return escambo;
+	}
+
+	public void setEscambo(boolean escambo) {
+		this.escambo = escambo;
+	}
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String img) {
+		this.imagem = img;
 	}
 	
 }

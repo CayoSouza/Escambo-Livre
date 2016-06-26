@@ -14,10 +14,10 @@ public class Estoque {
 	private static List<Produto> produtos = new ArrayList<>();
 	
 	static {
-		produtos.add(new Produto(new BigInteger("1"), "Nike Shox", new BigDecimal("500.00"), "Modelo v3"));
-		produtos.add(new Produto(new BigInteger("2"), "Conta de LoL", new BigDecimal("300.00"), "Platina 1"));
-		produtos.add(new Produto(new BigInteger("3"), "Nintendo 3DS", new BigDecimal("660.00"), "Acompanha 4 jogos originais"));
-		produtos.add(new Produto(new BigInteger("4"), "AWP Asiimov", new BigDecimal("130.00"), "Pouco usada (minimal wear)"));
+		produtos.add(new Produto(new BigInteger("1"), "Nike Shox", new BigDecimal("500.00"), "Modelo v3", "novo", true));
+		produtos.add(new Produto(new BigInteger("2"), "Conta de LoL", new BigDecimal("300.00"), "Platina 1", "novo", false));
+		produtos.add(new Produto(new BigInteger("3"), "Nintendo 3DS", new BigDecimal("660.00"), "Acompanha 4 jogos originais", "usado", false));
+		produtos.add(new Produto(new BigInteger("4"), "AWP Asiimov", new BigDecimal("130.00"), "Pouco usada (minimal wear)", "usado", true));
 	}
 	
 	public void addProduto(BigInteger id, String nome, BigDecimal preco, String descricao){

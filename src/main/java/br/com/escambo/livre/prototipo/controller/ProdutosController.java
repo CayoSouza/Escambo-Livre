@@ -1,11 +1,13 @@
 package br.com.escambo.livre.prototipo.controller;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import br.com.escambo.livre.prototipo.model.Carrinho;
@@ -69,7 +71,7 @@ public class ProdutosController {
 	public String comprar(BigInteger id, Model model){
 		carrinho.addProduto(produtos.getProduto(id));
 		model.addAttribute("carrinho", carrinho.getProdutos());
-		return "produtos";
+		return "redirect:/produtos";
 	}
 	
 	@RequestMapping("/produtos")
@@ -105,5 +107,22 @@ public class ProdutosController {
 			return "carrinho";
 		}
 		return "redirect:/carrinho";
+	}
+	
+	@RequestMapping(value="/anunciar", method=RequestMethod.GET)
+	public String showAnunciar(Model model){
+		if (!(model.containsAttribute("email")))
+			return "entrar";
+		model.addAttribute("produto", new Produto());
+		return "anunciar";
+	}
+	
+	@RequestMapping(value="/anunciar", method=RequestMethod.POST)
+	public String anunciar(Model model, String nome, BigDecimal preco, String descricao, String tipo, boolean escambo, String imagem){
+		Produto produto = new Produto(new BigInteger("6"), nome, preco, descricao, tipo, escambo, imagem);
+		produtos.addProduto(produto);
+		
+		model.addAttribute("produtos", produtos.getProdutos());
+		return "redirect:/produtos";
 	}
 }
