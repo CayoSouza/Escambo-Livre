@@ -119,6 +119,9 @@ public class ProdutosController {
 	
 	@RequestMapping(value="/anunciar", method=RequestMethod.POST)
 	public String anunciar(Model model, String nome, BigDecimal preco, String descricao, String tipo, boolean escambo, String imagem){
+		if(imagem=="")
+			imagem="/images/noimg.png";
+		
 		Produto produto = new Produto(new BigInteger("6"), nome, preco, descricao, tipo, escambo, imagem);
 		produtos.addProduto(produto);
 		
