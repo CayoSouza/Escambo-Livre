@@ -151,10 +151,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</ul>
 				<div id="portfoliolist">
 					<div class="portfolio" th:classappend="${produto.escambo ? 'escambolivre' +' '+ produto.tipo : produto.tipo}" data-cat="usado escambolivre" th:each="produto : ${estoque}">
-						<div class="portfolio-wrapper"> 
 						<a rel="group" title=""  th:href="'/produto?id='+${produto.id}">
+						<div class="portfolio-wrapper"> 
+						
 							<img th:src="${produto.imagem}? ${produto.imagem} : 'images/'+${produto.id}+'.jpg'" alt=""  class="img-responsive caixa-img-produto" />
-						</a>
+						
 							<div class="label">
 								<div class="label-text">
 									<span class="text-category" th:text="${produto.nome}"></span>
@@ -162,6 +163,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="label-bg"></div>
 							</div>
 						</div>
+						</a>
 					</div>
 				</div>
 <!-- 					<div class="portfolio novo escambolivre" data-cat="novo escambolivre"> -->
