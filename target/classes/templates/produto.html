@@ -176,7 +176,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li th:if="not *{email}"><a href="cadastrar.html">Cadastrar</a></li>
 							<li th:if="not *{email}"><a href="entrar.html">Entrar</a></li>
 							<li class="activate"><a href="produtos.html">Produtos</a> <!--<li><a href="blog.html">BLOG</a></li>-->
-							<li><a href="feature.html">Anunciar</a></li>
+							<li th:if="*{email}"><a href="anunciar.html">Anunciar</a></li>
 							<li><a href="contact.html">Contato</a></li>
 							<li th:if="*{email}" th:text="*{email}" style="font-size: 20px;">Bem
 								vindo,</li>
@@ -230,8 +230,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 			</form>
 			
-			<form class="form-inline" th:action="@{/randomProduct}"
-				th:object="${produto}" method="GET" style="margin: 20px 0">
+			<form class="form-inline" th:action="'/randomProduct?id='+*{id}"
+				th:object="${produto}" method="POST" style="margin: 20px 0">
 				<div class="form-group">
 					<ul style="list-style-type:none;font-size:23px;margin:5px;">
 						<li style="margin:5px 0px 40px 140px"><button type="submit" class="btn btn-primary">Ver produto aleatório</button></li>

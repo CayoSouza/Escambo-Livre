@@ -57,13 +57,17 @@ public class ProdutosController {
 	}
 	
 	@RequestMapping("/randomProduct")
-	public String randomProduct(Integer id){
-		int random = (int) (Math.random() * 4)+1;
-//		if (random == id)
-//			if (random==1)
-//				return "redirect:/produto?id="+(random+1);
-//			else if(random==4)
-//				return "redirect:/produto?id="+(random-1);
+	public String randomProduct(BigInteger id){
+		BigInteger random = new BigDecimal(Math.random() * (produtos.getSize())+1).toBigInteger();
+		System.out.println("produtos.getSize="+produtos.getSize()+" random="+random+" id="+id);
+		if (random.compareTo(id)==0)
+			if (id.intValue()==1)
+				return "redirect:/produto?id="+(random.add(new BigInteger("1")));
+			else if(id.intValue()==(produtos.getSize()))
+				return "redirect:/produto?id="+(random.subtract(new BigInteger("1")));
+			else
+				return "redirect:/produto?id="+(random.add(new BigInteger("1")));
+		
 		return "redirect:/produto?id="+random;
 	}
 	
@@ -122,7 +126,10 @@ public class ProdutosController {
 		if(imagem=="")
 			imagem="/images/noimg.png";
 		
-		Produto produto = new Produto(new BigInteger("6"), nome, preco, descricao, tipo, escambo, imagem);
+		int size = produtos.getSize();
+		BigInteger id = BigInteger.valueOf(size+1);
+		
+		Produto produto = new Produto(id, nome, preco, descricao, tipo, escambo, imagem);
 		produtos.addProduto(produto);
 		
 		model.addAttribute("produtos", produtos.getProdutos());

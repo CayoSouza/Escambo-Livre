@@ -48,4 +48,9 @@ public class Estoque {
 		}
 		return null;
 	}
+	
+	public int getSize(){
+		
+		return produtos.size();
+	}
 }
