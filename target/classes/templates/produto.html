@@ -211,7 +211,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<form class="form-inline"  th:action="'/comprar?id='+*{id}"
 				th:object="${produto}" method="POST" style="margin: 20px 0">
 				<div class="form-group">
-				<img style="max-width:600px; max-height:330px;" th:src="'images/'+*{id}+'.jpg'">
+				<img style="max-width:600px; max-height:330px;" th:src="${produto.imagem}? ${produto.imagem} : 'images/'+${produto.id}+'.jpg'">
 					<ul style="list-style-type:none;font-size:23px;margin:5px;float:right;">
 <!-- 						<li><label for="input-nome">Nome</label></li> -->
 <!-- 						<li><input disabled=true type="text" class="form-control" th:field="*{nome}" required="true" /></li> -->
