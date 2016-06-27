@@ -1758,3 +1758,19 @@ input[type="radio"] {
 :-ms-input-placeholder {  
    font: 12px verdana, arial, sans-serif;
 }
+
+.painel-produto{
+	font-family: 'roboto_condensedregular';
+	font-size: 20px;
+	color: #62A29E;
+	margin-top: 15px;
+	background: white;
+	line-height: 20px;
+	text-transform: uppercase;
+	border: none;
+	outline: none;
+	border-radius: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	-webkit-border-radius: 20px;
+}

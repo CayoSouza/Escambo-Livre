@@ -178,7 +178,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li th:if="not *{email}" id="menu-entrar"><a href="entrar.html">Entrar</a></li>
                         <li><a href="contact.html">Contato</a></li>
                         <li th:if="*{email}" th:object="${usuario}" th:text="*{'Bem vindo, '+ nome}" style="font-size:20px;">Bem vindo, </li>
-                        <li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+                        <li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span style="background-color:white; color:#62A29E;" class="badge" th:text="'R$ '+${T(br.com.escambo.livre.prototipo.model.Carrinho).total()}"></span></a></li>
 						<li th:if="*{email}"><a href="/logout">Logout</a></li>
 						</ul>
 					</nav>
@@ -211,7 +211,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<img style="max-width:600px; max-height:330px;" th:src="${produto.imagem}? ${produto.imagem} : 'images/'+${produto.id}+'.jpg'">
 					<ul style="list-style-type:none;font-size:23px;margin:5px;float:right;">
 						<li>
-							<div class="panel panel-info">
+							<div class="panel panel-info painel-produto">
 								<div class="panel-heading" th:object="${produto}" th:text="'Preço: R$ '+*{preco}"></div>
 								<div class="panel-body" th:object="${produto}" >
 									<p th:text="*{tipo} eq 'novo' ? 'Novo' : 'Usado'"></p>
@@ -220,7 +220,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 							</div>
 						</li>
-						<li style="margin-top:10px"><button type="submit" onclick="alert('Produto adicionado no carrinho de compras!');" class="btn btn-primary">Adicionar ao carrinho</button></li>
+						<li style="margin:10px 0px 0px 10px"><button type="submit" onclick="alert('Produto adicionado no carrinho de compras!');" class="btn btn-primary">Adicionar ao carrinho</button></li>
 					</ul>
 				</div>
 			</form>

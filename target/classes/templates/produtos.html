@@ -115,7 +115,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li th:if="not *{email}" id="menu-entrar"><a href="entrar.html">Entrar</a></li>
                         <li><a href="contact.html">Contato</a></li>
                         <li th:if="*{email}" th:object="${usuario}" th:text="*{'Bem vindo, '+ nome}" style="font-size:20px;">Bem vindo, </li>
-                        <li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+                        <li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span style="background-color:white; color:#62A29E;" class="badge" th:text="'R$ '+${T(br.com.escambo.livre.prototipo.model.Carrinho).total()}"></span></a></li>
 						<li th:if="*{email}"><a href="/logout">Logout</a></li>
 						</ul>
 					</nav>
