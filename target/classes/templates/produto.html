@@ -213,16 +213,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="form-group">
 				<img style="max-width:600px; max-height:330px;" th:src="${produto.imagem}? ${produto.imagem} : 'images/'+${produto.id}+'.jpg'">
 					<ul style="list-style-type:none;font-size:23px;margin:5px;float:right;">
-<!-- 						<li><label for="input-nome">Nome</label></li> -->
-<!-- 						<li><input disabled=true type="text" class="form-control" th:field="*{nome}" required="true" /></li> -->
-<!-- 						<li><label for="input-preco">Preço</label></li> -->
-<!-- 						<li><input disabled=true type="text" class="form-control" th:field="*{preco}" required="true" /></li> -->
-<!-- 						<li><label for="input-descricao">Descrição</label></li> -->
-<!-- 						<li><input disabled=true type="text" class="form-control" th:field="*{descricao}" required="true" /></li> -->
 						<li>
 							<div class="panel panel-info">
 								<div class="panel-heading" th:object="${produto}" th:text="'Preço: R$ '+*{preco}"></div>
-								<div class="panel-body" th:object="${produto}" th:text="*{descricao}"></div>
+								<div class="panel-body" th:object="${produto}" >
+									<p th:text="*{tipo} eq 'novo' ? 'Novo' : 'Usado'"></p>
+									<p th:text="*{escambo}?'Aceita troca' : 'Não aceita troca'"></p>
+									<p th:text="'Descrição: '+*{descricao}"></p>
+								</div>
 							</div>
 						</li>
 						<li style="margin-top:10px"><button type="submit" onclick="alert('Produto adicionado no carrinho de compras!');" class="btn btn-primary">Adicionar ao carrinho</button></li>

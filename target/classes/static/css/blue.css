@@ -1628,3 +1628,117 @@ h3.style{
 	width: 300px;
 	height: 200px;
 }
+
+label{
+	font-family: 'roboto_condensedregular';
+	font-size: 15px;
+	color: #62A29E;
+	padding: 12px 30px;
+	background: white;
+	line-height: 20px;
+	text-transform: uppercase;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	box-shadow: inset 0px -4px 0px #47817E;
+	-webkit-appearance: none;
+	-webkit-border-radius: 20px;
+	/*
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+
+	
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	
+	-webkit-box-shadow: inset 0px -4px 0px #47817E;
+	-moz-box-shadow: inset 0px -4px 0px #47817E;
+	-o-box-shadow: inset 0px -4px 0px #47817E;*/
+}
+
+.opcoes{
+	float:right;
+	font-family: 'roboto_condensedregular';
+	font-size: 15px;
+	color: #62A29E;
+	padding: 12px 30px;
+	background: white;
+	line-height: 10px;
+	text-transform: uppercase;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	box-shadow: inset 0px -4px 0px #47817E;
+	-webkit-appearance: none;
+	-webkit-border-radius: 20px;
+}
+
+.label-opcoes {
+	font-family: 'roboto_condensedregular';
+	font-size: 15px;
+	color: #62A29E;
+	padding: 15px 30px;
+	background: white;
+	line-height: 20px;
+	text-transform: uppercase;
+	border: none;
+	outline: none;
+	border-radius: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	-webkit-border-radius: 20px;
+}
+
+input[type="radio"] {
+	padding-right: 50px;
+}
+
+#nome {
+	border-radius: 20px;
+	width: 300px;
+}
+
+#preco {
+	border-radius: 20px;
+	width: 200px;
+}
+
+#descricao {
+	border-radius: 20px;
+	width: 500px;
+}
+
+#imagem{
+	margin-top: 8px;
+	border-radius: 20px;
+	width: 500px;
+}
+
+#anunciar {
+	border-radius: 20px;
+	width: 200px;
+	margin-left: 25%;
+}
+
+#box-preco{
+	float:right;
+	display: inline-block;
+}
+
+#box-nome{
+	display: inline-block;
+}
+
+#box-imagem {
+	display:inline-block;
+}
+
+#box-opcoes{
+	display:block;
+	min-width: 500px;
+}
+
+#box-descricao {
+}
