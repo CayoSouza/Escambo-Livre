@@ -1742,3 +1742,19 @@ input[type="radio"] {
 
 #box-descricao {
 }
+
+::-webkit-input-placeholder {
+   font: 12px verdana, arial, sans-serif;
+}
+
+:-moz-placeholder {
+   font: 12px verdana, arial, sans-serif;
+}
+
+::-moz-placeholder {
+   font: 12px verdana, arial, sans-serif;
+}
+
+:-ms-input-placeholder {  
+   font: 12px verdana, arial, sans-serif;
+}
