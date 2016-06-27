@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<title>Entrar | EscamboLivre</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous" />
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-static-top" th:fragment="menu">
+		<div class="container">
+			<ul class="nav navbar-nav">
+				<li th:attr="class='${active}'"><a href="painel-controle">Painel de Controle</a></li>
+				<li class="${active}" th:if="not *{email}"><a href="/login">Login</a></li>
+				<li class="${active}"><a href="/produtos">Produtos</a></li>
+				<li class="${active}" th:if="*{email}"><a href="/logout">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+</body>
+</html>

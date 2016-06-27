@@ -1,0 +1,288 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Escambo Livre | Anunciar</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1"
+	charset="UTF-8">
+<script type="application/x-javascript">
+	
+	
+	
+	 addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } 
+
+
+
+</script>
+<link href="css/blue.css" rel="stylesheet" type="text/css" media="all" />
+<!----font-Awesome----->
+<link rel="stylesheet" href="fonts/web/css/font-awesome.min.css">
+<!----font-Awesome----->
+<!-- start plugins -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- Owl Carousel Assets -->
+<link href="css/owl.carousel.css" rel="stylesheet">
+<script src="js/owl.carousel.js"></script>
+<script>
+	$(document).ready(function() {
+
+		$("#owl-demo").owlCarousel({
+			items : 4,
+			lazyLoad : true,
+			autoPlay : true,
+			navigation : true,
+			navigationText : [ "", "" ],
+			rewindNav : false,
+			scrollPerPage : false,
+			pagination : false,
+			paginationNumbers : false,
+		});
+
+	});
+</script>
+<!-- //Owl Carousel Assets -->
+<!-- start circle -->
+<script>
+	(function($) {
+		$.fn.percentPie = function(options) {
+
+			var settings = $.extend({
+				width : 100,
+				trackColor : "EEEEEE",
+				barColor : "E2534B",
+				barWeight : 30,
+				startPercent : 0,
+				endPercent : 1,
+				fps : 60
+			}, options);
+
+			this.css({
+				width : settings.width,
+				height : settings.width
+			});
+
+			var that = this, hoverPolice = false, canvasWidth = settings.width, canvasHeight = canvasWidth, id = $('canvas').length, canvasElement = $('<canvas id="' + id + '" width="' + canvasWidth + '" height="' + canvasHeight + '"></canvas>'), canvas = canvasElement
+					.get(0).getContext("2d"), centerX = canvasWidth / 2, centerY = canvasHeight / 2, radius = settings.width
+					/ 2 - settings.barWeight / 2;
+			counterClockwise = false, fps = 1000 / settings.fps, update = .01;
+			this.angle = settings.startPercent;
+
+			this.drawArc = function(startAngle, percentFilled, color) {
+				var drawingArc = true;
+				canvas.beginPath();
+				canvas.arc(centerX, centerY, radius, (Math.PI / 180)
+						* (startAngle * 360 - 90), (Math.PI / 180)
+						* (percentFilled * 360 - 90), counterClockwise);
+				canvas.strokeStyle = color;
+				canvas.lineWidth = settings.barWeight;
+				canvas.stroke();
+				drawingArc = false;
+			}
+
+			this.fillChart = function(stop) {
+				var loop = setInterval(function() {
+					hoverPolice = true;
+					canvas.clearRect(0, 0, canvasWidth, canvasHeight);
+
+					that.drawArc(0, 360, settings.trackColor);
+					that.angle += update;
+					that.drawArc(settings.startPercent, that.angle,
+							settings.barColor);
+
+					if (that.angle > stop) {
+						clearInterval(loop);
+						hoverPolice = false;
+					}
+				}, fps);
+			}
+
+			this.mouseover(function() {
+				if (hoverPolice == false) {
+					that.angle = settings.startPercent;
+					that.fillChart(settings.endPercent);
+				}
+			});
+
+			this.fillChart(settings.endPercent);
+			this.append(canvasElement);
+			return this;
+		}
+	}(jQuery));
+
+	$(document).ready(function() {
+
+		$('.google').percentPie({
+			width : 100,
+			trackColor : "E2534B",
+			barColor : "76C7C0",
+			barWeight : 20,
+			endPercent : .9,
+			fps : 60
+		});
+
+		$('.moz').percentPie({
+			width : 100,
+			trackColor : "E2534B",
+			barColor : "76C7C0",
+			barWeight : 20,
+			endPercent : .75,
+			fps : 60
+		});
+
+		$('.safari').percentPie({
+			width : 100,
+			trackColor : "E2534B",
+			barColor : "#76C7C0",
+			barWeight : 20,
+			endPercent : .5,
+			fps : 60
+		});
+
+	});
+</script>
+</head>
+<body>
+	<div class="header_bg">
+		<div class="container">
+			<div class="header">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" alt="" /></a>
+				</div>
+				<div class="h_menu">
+					<a id="touch-menu" class="mobile-menu" href="#">Menu</a>
+					<nav>
+						<ul class="menu list-unstyled">
+						<li><a href="index.html">Início</a></li>
+						<li><a href="produtos.html">Produtos</a>
+						<li th:if="*{email}" class="activate"><a href="anunciar.html">Anunciar</a></li>
+                        <li th:if="not *{email}"><a href="cadastrar.html">Cadastrar</a></li>
+                        <li th:if="not *{email}" id="menu-entrar"><a href="entrar.html">Entrar</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li th:if="*{email}" th:object="${usuario}" th:text="*{'Bem vindo, '+ nome}" style="font-size:20px;">Bem vindo, </li>
+                        <li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span style="background-color:white; color:#62A29E;" class="badge" th:text="'R$ '+${T(br.com.escambo.livre.prototipo.model.Carrinho).total()}"></span></a></li>
+						<li th:if="*{email}"><a href="/logout">Logout</a></li>
+						</ul>
+					</nav>
+					<script src="js/menu.js" type="text/javascript"></script>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<div class="main_bg">
+		<!-- start main -->
+		<div class="container">
+			<div class="main_grid1">
+				<h3 class="style pull-left" >Anuncie um produto</h3>
+				<ol class="breadcrumb pull-right">
+					<li><a href="produtos.html">Produtos</a></li>
+					<li class="active">Anunciar</li>
+				</ol>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<div class="main_btm1">
+		<!-- start main_btm1 -->
+		<div class="container">
+
+			<form class="form-inline" th:action="@{/anunciar}"
+				th:object="${produto}" method="POST" style="margin: 20px 0">
+				<div class="form-group">
+					<ul style="list-style-type:none;font-size:23px;margin:5px;float:right;">
+						<div id="box-nome">
+							<li><label for="nome">Nome *</label><br>
+							<input id="nome" type="text" placeholder="nome do produto" class="form-control" th:field="*{nome}" required="true" /></li>
+						</div>
+						<div id="box-preco">
+							<li><label for="preco">Preço *</label><br>
+							<input id="preco" type="number" placeholder="preço do produto" class="form-control" th:field="*{preco}" required="true" /></li>
+						</div>
+						<div id="box-opcoes">
+							<li class="opcoes"><label class="label-opcoes" for="tipo">Tipo *</label>
+							<input type="radio" name="tipo" value="novo" required="true" th:field="*{tipo}"/>Novo
+							<input type="radio" name="tipo" value="usado" th:field="*{tipo}"/>Usado</li>
+							<li class="opcoes"><label class="label-opcoes" for="escambo">Aceita troca? *</label>
+							<input type="radio" name="escambo" value="true" required="true" th:field="*{escambo}"/>Sim
+							<input type="radio" name="escambo" value="false" th:field="*{escambo}"/>Não</li>
+						</div><br>
+						<div id="box-imagem">
+							<li><label for="imagem">Link da imagem</label><br>
+							<input id="imagem" type="text" placeholder="(opcional) ex: http://imgur.com/H1sYz" class="form-control" th:field="*{imagem}"/></li>
+						</div>
+						<div id="box-descricao">
+							<li><label for="descricao">Descrição *</label><br>
+							<textarea id="descricao" rows="2" cols="20" id="descricao" placeholder="detalhes relevantes do produto" class="form-control" th:field="*{descricao}" required="true"></textarea></li>
+						</div>
+						
+						<li style="margin-top:10px"><button id="anunciar" type="submit" class="btn btn-primary">Anunciar</button></li>
+					</ul>
+				</div>
+			</form>
+
+
+		
+		</div>
+	</div>
+	<div class="footer_bg">
+		<!-- start footer -->
+		<div class="container">
+			<div class="footer">
+				<div class="col-md-4 footer1_of_3">
+					<div class="f_logo">
+						<a href="index.html"><img src="images/logo.png" alt="" /></a>
+					</div>
+					<p class="f_para">O melhor e-commerce de trocas brasileiro
+						desde 2001.</p>
+					<p>
+						Telefone:&nbsp;<span>(21) 2345-3344</span>
+					</p>
+					<span class="">Email:&nbsp;<a
+						href="mailto:info@mycompany.com">contato@escambolivre.com.br</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer1_bg">
+		<!-- start footer1 -->
+		<div class="container">
+			<div class="footer1">
+				<div class="copy pull-left">
+					<p class="link">
+						<span>&#169; All rights reserved | Template by&nbsp;<a
+							href="http://w3layouts.com/"> W3Layouts</a></span>
+					</p>
+				</div>
+				<div class="soc_icons pull-right">
+					<ul class="list-unstyled text-center">
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
