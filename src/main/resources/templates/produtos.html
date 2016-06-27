@@ -109,16 +109,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<nav>
 						<ul class="menu list-unstyled">
 							<li><a href="index.html">Início</a></li>
-							<li><a href="about.html">Sobre</a></li>
-							<li th:if="not *{email}"><a href="cadastrar.html">Cadastrar</a></li>
-							<li th:if="not *{email}"><a href="entrar.html">Entrar</a></li>
-							<li class="activate"><a href="produtos.html">Produtos</a>
-							<!--<li><a href="blog.html">BLOG</a></li>-->
-							<li th:if="*{email}"><a href="anunciar.html">Anunciar</a></li>
-							<li><a href="contact.html">Contato</a></li>
-							<li th:if="*{email}" th:text="*{email}" style="font-size:20px;">Bem vindo, </li>
-							<li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
-							<li th:if="*{email}"><a href="/logout">Logout</a></li>
+						<li class="activate"><a href="produtos.html">Produtos</a>
+						<li th:if="*{email}"><a href="anunciar.html">Anunciar</a></li>
+                        <li th:if="not *{email}"><a href="cadastrar.html">Cadastrar</a></li>
+                        <li th:if="not *{email}" id="menu-entrar"><a href="entrar.html">Entrar</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li th:if="*{email}" th:object="${usuario}" th:text="*{'Bem vindo, '+ nome}" style="font-size:20px;">Bem vindo, </li>
+                        <li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+						<li th:if="*{email}"><a href="/logout">Logout</a></li>
 						</ul>
 					</nav>
 				</div>

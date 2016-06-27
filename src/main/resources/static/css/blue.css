@@ -1758,3 +1758,7 @@ input[type="radio"] {
 :-ms-input-placeholder {  
    font: 12px verdana, arial, sans-serif;
 }
+
+#menu-entrar{
+	color:yellow;
+}
