@@ -1600,6 +1600,14 @@ h3.style{
 	}
 }
 
+#slider {
+	text-decoration:none;
+}
+
+#sobre {
+	padding-right: 20px;
+}
+
 #h1-carrinho {
 	font-size: 20px;
 }
@@ -1617,6 +1625,13 @@ h3.style{
 #total-carrinho {
 	font-weight: bold;
 	color: red;
+}
+
+#limpar-carrinho{
+	text-decoration:none;
+	margin-left:85%;
+	font-size: 17px;
+	font-weight: bold;
 }
 
 #deletar-item{
@@ -1774,3 +1789,5 @@ input[type="radio"] {
 	-webkit-appearance: none;
 	-webkit-border-radius: 20px;
 }
+
+

@@ -208,7 +208,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li th:if="not *{email}" id="menu-entrar"><a href="entrar.html">Entrar</a></li>
                         <li><a href="contact.html">Contato</a></li>
                         <li th:if="*{email}" th:object="${usuario}" th:text="*{'Bem vindo, '+ nome}" style="font-size:20px;">Bem vindo, </li>
-                        <li th:if="*{email}"><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span style="background-color:white; color:#62A29E;" class="badge" th:text="'R$ '+${T(br.com.escambo.livre.prototipo.model.Carrinho).total()}"></span></a></li>
+                        <li th:if="*{email}"><a href="carrinho.html">
+                        	<span style="background-color:white; color:#62A29E;" class="badge" th:text="${T(br.com.escambo.livre.prototipo.model.Carrinho).getSize()}"></span>
+                        	<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        	<span style="background-color:white; color:#62A29E;" class="badge" th:text="'R$ '+${T(br.com.escambo.livre.prototipo.model.Carrinho).total()}"></span></a>
+                        </li>
 						<li th:if="*{email}"><a href="/logout">Logout</a></li>
                     </ul>
                 </nav>
@@ -226,7 +230,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <!-- /Slide image -->
             <!-- Texts container -->
             <div class="slide_content link">
-                <a href="#ultimos-anuncios"><div class="slide_content_wrap">
+                <a id="slider" href="/produtos.html"><div class="slide_content_wrap">
                     <!-- Text title -->
                     <h4 class="title">Comece a negociar hoje!</h4>
                     <!-- /Text title -->
@@ -270,8 +274,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="clearfix"></div>
             </div>
             <div class="span_of_4"><!-- start span_of_4 -->
-                <div class="col-md-3 span1_of_4">
-                    <div class="span4_of_list">
+               <div class="col-md-3 span1_of_4">
+                    <div onclick="location.href='/cadastrar.html'" class="span4_of_list">
                         <span class="active"><i class="fa fa-thumbs-o-up"></i></span>
                         <h3>Cadastre-se Grátis</h3>
                         <p>Tenha mais controle de suas negociações, crie sua reputação e desfrute de todas as
@@ -280,9 +284,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <a class="btn btn-2 active" href="cadastrar.html">Cadastrar</a>
                         </div>
                     </div>
-                </div>
+                </div></a>
                 <div class="col-md-3 span1_of_4">
-                    <div class="span4_of_list">
+                    <div onclick="location.href='/anunciar.html'" class="span4_of_list">
                         <span><i class="fa fa-lock"></i></span>
                         <h3>Anuncie</h3>
                         <p>Aqui todos tem a liberdade de anunciar qualquer produto, seja para venda ou troca!</p>
@@ -292,7 +296,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                 </div>
                 <div class="col-md-3 span1_of_4">
-                    <div class="span4_of_list">
+                    <div onclick="location.href='/produtos.html'" class="span4_of_list">
                         <span><i class="fa fa-flag"></i></span>
                         <h3>Busque</h3>
                         <p>Procurando algum produto? <br>Não perca tempo e navegue por mais de 30.000 produtos
@@ -303,7 +307,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                 </div>
                 <div class="col-md-3 span1_of_4">
-                    <div class="span4_of_list">
+                    <div onclick="location.href='/entrar.html'" class="span4_of_list">
                         <span><i class="fa fa-flask"></i></span>
                         <h3>entre</h3>
                         <p>Já tem uma conta? <br>Faça o login e comece a negociar agora mesmo!</p>

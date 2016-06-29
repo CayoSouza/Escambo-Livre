@@ -63,4 +63,10 @@ public class Carrinho {
 	public static void limparCarrinho(){
 		carrinho.clear();
 	}
+	
+	public static int getSize(){
+		
+		return carrinho.size();
+	}
+	
 }

@@ -135,4 +135,11 @@ public class ProdutosController {
 		model.addAttribute("produtos", produtos.getProdutos());
 		return "redirect:/produtos";
 	}
+	
+	@RequestMapping("/limpar-carrinho")
+	public String limparCarrinho(){
+		
+		
+		return "redirect:/carrinho";
+	}
 }

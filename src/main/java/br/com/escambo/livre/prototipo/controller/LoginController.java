@@ -100,14 +100,6 @@ public class LoginController {
 		
 	}
 	
-
-	
-	@RequestMapping("/feature")
-	public String anunciar(){
-		
-		return "feature";
-	}
-	
 	@RequestMapping("/contact")
 	public String contato(){
 		
